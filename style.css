@@ -1,14 +1,22 @@
 html {
   scroll-behavior: smooth;
+  height: 100%;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
 }
 body {
   font-size: 1rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Roboto;
   color: #2b2118;
   background-color: #fffdf6;
   max-width: 1440px;
   margin: auto;
+}
+p {
+  line-height: 1.5;
 }
 h3 {
   font-size: 1.5rem;
@@ -26,9 +34,7 @@ h3:hover {
   color: #fe7f2d;
 }
 h2 {
-  padding: 1.7rem 0 1.7rem 0;
   font-size: 2.25rem;
-  margin: 0 6.25rem 0 6.25rem;
   font-weight: 600;
   transition: color 0.5s ease-out, transform 0.5s ease-in-out;
   transform-origin: top left;
@@ -40,17 +46,13 @@ h2:hover {
 h1 {
   font-size: 3.375rem;
 }
-.oddeleni {
-  border-radius: 23px;
-}
 button {
   border: none;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Roboto;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 40px;
@@ -148,99 +150,142 @@ input[type="active"] {
   color: hsl(336, 69%, 30%);
   transform: scale(1.02);
 }
+.heroabar {
+  top: 4.6rem;
+  margin-bottom: 6.25rem;
+}
+
 .hero {
   position: relative;
-  margin-bottom: 7rem;
-}
-.hero-image {
-  max-width: 1440px;
-  width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: url(Fotky/webdesign\ hero\ placeholder.jpg);
   background-size: cover;
-  position: relative;
-  top: 4.5rem;
-  max-height: 868px;
+  background-repeat: no-repeat;
+  max-height: 70vh;
+  padding: 70vh 6.25rem 6.25rem 6.25rem;
+  border-radius: 0 0 23px 23px;
 }
 .hero-content {
-  text-align: left;
-  position: absolute;
-  bottom: 8px;
-  left: 6.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
-.hero-texts-changes {
-  display: inline-block;
+.hero-texts-change {
+  text-align: left;
+  display: flex;
+  flex-direction: column-reverse;
 }
 .hero-pink-text {
   color: #d2266a;
 }
-.hero-text-changes > div {
+.hero-texts-change > div {
   opacity: 0;
-  position: absolute;
+  font-size: 54px;
+  font-weight: 600;
+}
+.hero-main-text {
+  font-size: 54px;
+  padding-bottom: 3rem;
 }
 .hero-texts-change > div:nth-child(1) {
   animation: change-text 7.5s ease-out infinite 0s;
+  position: relative;
 }
 .hero-texts-change > div:nth-child(2) {
   animation: change-text 7.5s ease-out infinite 2.5s;
+  opacity: 0;
+  position: absolute;
 }
 .hero-texts-change > div:nth-child(3) {
   animation: change-text 7.5s ease-out infinite 5s;
+  opacity: 0;
+  position: absolute;
 }
 @keyframes change-text {
   0% {
     opacity: 0;
   }
-  3% {
+  10% {
+    opacity: 1;
+    transform-origin: left;
+    scale: 1.005;
+  }
+  30% {
     opacity: 1;
   }
-  33% {
-    opacity: 0;
-  }
-  66% {
+  40% {
     opacity: 0;
   }
 
   100% {
-    font-size: 0px;
     opacity: 0;
-    margin-left: 10px;
-    margin-top: 0px;
   }
 }
+.barkontejner {
+  padding: 0 6.25rem;
+  position: relative;
+  top: -5.5px;
+}
+.pinkbar {
+  max-width: 33%;
+  background-color: #d2266a;
+  height: 11px;
+  z-index: 2000;
+  border-radius: 23px;
+  position: relative;
+  animation: slider 7.5s ease-out infinite 0.75s;
+}
 @keyframes slider {
+  0% {
+    left: 0%;
+  }
+  20% {
+    left: 0%;
+  }
+  28% {
+    left: 33%;
+  }
+  52% {
+    left: 33%;
+  }
+  60% {
+    left: 66%;
+  }
+  84% {
+    left: 66%;
+  }
+  92% {
+    left: 0%;
+  }
 }
-.portfolio {
-  background-color: #f7f3e3;
-}
+
 .oddeleni {
   width: 100%;
   max-width: 1440px;
   position: relative;
   margin-bottom: 7rem;
   background-color: #f7f3e3;
-  padding-bottom: 2rem;
+  padding: 3rem 0;
+  border-radius: 23px;
 }
 .oddeleni-2-column {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 100px;
+  gap: 70px;
+  padding: 0 6.25rem;
 }
-.text-1-column {
-  max-width: 50%;
-  width: 50%;
+.oddeleni-1-column {
+  padding: 0 6.25rem;
 }
-.column-left {
-  padding-left: 6.25rem;
-}
-.column-right {
-  padding: 2rem 6.25rem 0 0;
-  object-fit: cover;
-}
-.column-right img {
+.column {
+  max-width: 100%;
   width: 100%;
+}
+.column-photo img {
+  width: 100%;
+  min-width: 85%;
   border-radius: 40px;
+  object-fit: cover;
 }
 .bar {
   position: relative;
@@ -258,14 +303,12 @@ input[type="active"] {
   background-color: #ffffff;
   border-radius: 20px;
 }
-
 .progress-bar {
   height: 100%;
   background-color: #d2266a;
   border-radius: 20px;
   transition: width 0.3s ease;
 }
-
 .progress-text {
   text-align: left;
   float: left;
@@ -276,55 +319,58 @@ input[type="active"] {
   color: #d2266a;
   font-weight: 600;
 }
-
 form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  position: relative;
 }
 .form {
   position: relative;
-  display: flex;
-  justify-content: stretch;
   width: 100%;
 }
-
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
 label {
   min-width: 25%;
   margin-bottom: 10px;
-  margin-top: 3px;
 }
-
 input[type="text"],
 input[type="email"] {
-  min-width: 65%;
+  width: 65%;
   margin-bottom: 15px;
   border: 1px solid #d2266a;
   border-radius: 40px;
   padding: 10px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Roboto;
   color: #2b2118;
 }
 textarea {
   height: 150px;
-  min-width: 65%;
+  min-height: 4rem;
+  max-height: 45rem;
+  width: 65%;
+  max-width: 65%;
+  resize: vertical;
   margin-bottom: 10px;
   border: 1px solid #d2266a;
   border-radius: 23px;
   padding: 10px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Roboto;
   color: #2b2118;
+}
+.row2 {
+  display: flex;
+  flex-direction: row-reverse;
 }
 input[type="submit"] {
   border: none;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  float: right;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Roboto;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 40px;
@@ -336,8 +382,7 @@ input[type="submit"] {
 input::placeholder,
 textarea::placeholder {
   color: #d2266a;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Roboto;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -354,4 +399,203 @@ footer {
   padding: 0.8rem 6.25rem 0.8rem 6.25rem;
   width: calc(100% - 12.5rem);
   z-index: 100;
+}
+::-webkit-scrollbar {
+  background: #fffdf6;
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #fffdf6;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d2266a;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(336, 69%, 39%);
+  transition: ease-in;
+}
+.kartastred {
+  position: relative;
+  width: 100%;
+  top: 6rem;
+}
+.zadni {
+  border-radius: 23px;
+  background-image: url(Fotky/vizitka\ edaini\ logo.jpg);
+  background-size: cover;
+}
+
+.predni {
+  background-image: url(Fotky/vizitka\ edaini\ obr.jpg);
+  border-radius: 23px;
+}
+.kontejner-karta,
+.predni,
+.zadni {
+  width: 100%;
+  aspect-ratio: 90 / 50;
+}
+.h,
+.karta p,
+.vinfo,
+.p {
+  color: #2b2118;
+  padding-left: 39%;
+  margin-right: 10%;
+}
+.h {
+  font-size: 24px;
+  padding-top: 8%;
+  line-height: 90%;
+}
+.karta p {
+  padding-bottom: 15px;
+  vertical-align: auto;
+  padding-left: 2px;
+}
+.bold {
+  font-weight: 600;
+}
+.p,
+.kariera {
+  margin-left: 39%;
+}
+.vinfo {
+  padding-top: 3rem;
+  line-height: 1.3;
+  margin-top: 25px;
+}
+.vkontakt a {
+  text-decoration: none;
+  color: #2b2118;
+  transition: 0.35s ease-in;
+}
+.vkontakt a:hover,
+.vkontakt:active,
+.vkontakt:focus {
+  color: #d2266a;
+}
+.kontejner-karta {
+  perspective: 1000px;
+}
+.kontejner-karta:hover .karta,
+.kontejner-karta.hover .karta {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+.karta {
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.zadni,
+.predni {
+  backface-visibility: hidden;
+  position: absolute;
+}
+.zadni {
+  z-index: 2;
+  transform: rotateY(0deg);
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  border: 1px solid #d2266a;
+}
+.predni {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  border: 1px solid #d2266a;
+}
+.predni {
+  transform: rotateY(180deg);
+}
+.vertical.kontejner {
+  position: relative;
+}
+.vertical .zadni {
+  transform: rotateX(180deg);
+}
+.vertical.kontejner:hover .karta {
+  transform: rotateX(-180deg);
+}
+.carousel-container1,
+.carousel-container2,
+.carousel-container3 {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+}
+.carousel-container1 ul,
+.carousel-container2 ul,
+.carousel-container3 ul {
+  aspect-ratio: 16 / 9;
+  padding: 20px;
+  display: flex;
+  gap: 4vw;
+}
+.carousel-container1 li,
+.carousel-container2 li,
+.carousel-container3 li {
+  list-style-type: none;
+  background-color: #eeeeee;
+  border: 1px solid #dddddd;
+  padding: 20px;
+  flex: 0 0 100%;
+}
+.carousel-container1 ul,
+.carousel-container2 ul,
+.carousel-container3 ul {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+.carousel-container1 li,
+.carousel-container2 li,
+.carousel-container3 li {
+  scroll-snap-align: center;
+  background-size: cover;
+}
+.carousel-container1,
+.carousel-container2,
+.carousel-container3 {
+  ::-webkit-scrollbar {
+    background: #f7f3e3;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0;
+    border-radius: 10px;
+    margin: 0 6.25rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d2266a;
+    border-radius: 10px;
+
+    transition: background-color 1s ease-in;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(336, 69%, 39%);
+    transition: background-color 1s ease-in;
+  }
+}
+.carousel-container1 li:nth-child(1) {
+  background-image: url(Fotky/webdesign\ hero\ placeholder.jpg);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .oddeleni {
+    scale: 0.8;
+    opacity: 0;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: 100px 300px;
+  }
+}
+@keyframes fade-in {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
 }
