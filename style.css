@@ -232,7 +232,7 @@ input[type="active"] {
   max-width: 33%;
   background-color: #d2266a;
   height: 11px;
-  z-index: 2000;
+  z-index: 55;
   border-radius: 23px;
   position: relative;
   animation: slider 7.5s ease-out infinite 0.75s;

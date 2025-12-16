@@ -312,6 +312,7 @@
                     <input
                       type="submit"
                       value="Odeslat email"
+                      onSubmit="{handleSubmit}"
                       class="pink-button"
                     />
                   </div>
@@ -375,6 +376,17 @@
           document.getElementById("header").style.top = "-100px";
         }
         prevScrollpos = currentScrollPos;
+      };
+
+      // Source - https://stackoverflow.com/a/70168492
+      // Posted by Ritik Pal
+      // Retrieved 2025-12-16, License - CC BY-SA 4.0
+
+      const handleClick = (e) => {
+        e.preventDefault();
+        window.open(
+          `mailto:${email}?subject=${subject}&body=${name}: ${message}`
+        );
       };
     </script>
   </body>
