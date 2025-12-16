@@ -38,6 +38,7 @@ h2 {
   font-weight: 600;
   transition: color 0.5s ease-out, transform 0.5s ease-in-out;
   transform-origin: top left;
+  cursor: default;
 }
 h2:hover {
   color: #2b2118;
@@ -181,10 +182,12 @@ input[type="active"] {
   opacity: 0;
   font-size: 54px;
   font-weight: 600;
+  cursor: default;
 }
 .hero-main-text {
   font-size: 54px;
   padding-bottom: 3rem;
+  cursor: default;
 }
 .hero-texts-change > div:nth-child(1) {
   animation: change-text 7.5s ease-out infinite 0s;
@@ -264,9 +267,10 @@ input[type="active"] {
   position: relative;
   margin-bottom: 7rem;
   background-color: #f7f3e3;
-  padding: 3rem 0;
+  padding: 0 0 3rem 0;
   border-radius: 23px;
 }
+
 .oddeleni-2-column {
   display: flex;
   flex-direction: row;
@@ -275,7 +279,7 @@ input[type="active"] {
   padding: 0 6.25rem;
 }
 .oddeleni-1-column {
-  padding: 0 6.25rem;
+  padding: 2rem 6.25rem 0 6.25rem;
 }
 .column {
   max-width: 100%;
@@ -423,12 +427,12 @@ footer {
 }
 .zadni {
   border-radius: 23px;
-  background-image: url(Fotky/vizitka\ edaini\ logo.jpg);
+  background-image: url(Fotky/vizitka\ edaini\ logo.webp);
   background-size: cover;
 }
 
 .predni {
-  background-image: url(Fotky/vizitka\ edaini\ obr.jpg);
+  background-image: url(Fotky/vizitka\ edaini\ obr.webp);
   border-radius: 23px;
 }
 .kontejner-karta,
@@ -528,23 +532,36 @@ footer {
   box-sizing: border-box;
   position: relative;
   width: 100%;
+  border-radius: 23px 0 23px 0;
 }
 .carousel-container1 ul,
-.carousel-container2 ul,
-.carousel-container3 ul {
-  aspect-ratio: 16 / 9;
+.carousel-container2 ul {
+  aspect-ratio: 3 / 2;
   padding: 20px;
   display: flex;
   gap: 4vw;
 }
+.carousel-container3 ul {
+  aspect-ratio: 2.75 / 2;
+  padding: 20px;
+  display: flex;
+  gap: 1vw;
+}
 .carousel-container1 li,
-.carousel-container2 li,
+.carousel-container2 li {
+  list-style-type: none;
+  background-color: #eeeeee;
+  border-radius: 0;
+  padding: 20px;
+  flex: 0 0 100%;
+}
 .carousel-container3 li {
   list-style-type: none;
   background-color: #eeeeee;
-  border: 1px solid #dddddd;
+  border: 6px solid hsl(28, 28%, 13%, 78%);
+  border-radius: 50px;
   padding: 20px;
-  flex: 0 0 100%;
+  flex: 0 0 30%;
 }
 .carousel-container1 ul,
 .carousel-container2 ul,
@@ -553,7 +570,10 @@ footer {
   scroll-snap-type: x mandatory;
 }
 .carousel-container1 li,
-.carousel-container2 li,
+.carousel-container2 li {
+  scroll-snap-align: center;
+  background-size: contain;
+}
 .carousel-container3 li {
   scroll-snap-align: center;
   background-size: cover;
@@ -579,10 +599,56 @@ footer {
   ::-webkit-scrollbar-thumb:hover {
     background-color: hsl(336, 69%, 39%);
     transition: background-color 1s ease-in;
+    cursor: pointer;
   }
 }
 .carousel-container1 li:nth-child(1) {
-  background-image: url(Fotky/webdesign\ hero\ placeholder.jpg);
+  background-image: url(Fotky/H1.webp);
+}
+.carousel-container1 li:nth-child(2) {
+  background-image: url(Fotky/H2.webp);
+}
+.carousel-container1 li:nth-child(3) {
+  background-image: url(Fotky/H3.webp);
+}
+.carousel-container1 li:nth-child(4) {
+  background-image: url(Fotky/H4.webp);
+}
+.carousel-container1 li:nth-child(5) {
+  background-image: url(Fotky/H5.webp);
+}
+.carousel-container1 li:nth-child(6) {
+  background-image: url(Fotky/H6.webp);
+}
+.carousel-container1 li:nth-child(7) {
+  background-image: url(Fotky/H7.webp);
+}
+.carousel-container2 li:nth-child(1) {
+  background-image: url(Fotky/M1.webp);
+}
+.carousel-container2 li:nth-child(2) {
+  background-image: url(Fotky/M2.webp);
+}
+.carousel-container2 li:nth-child(3) {
+  background-image: url(Fotky/M3.webp);
+}
+.carousel-container2 li:nth-child(4) {
+  background-image: url(Fotky/M4.webp);
+}
+.carousel-container2 li:nth-child(5) {
+  background-image: url(Fotky/M5.webp);
+}
+.carousel-container3 li:nth-child(1) {
+  background-image: url(Fotky/Splash\ screen.webp);
+}
+.carousel-container3 li:nth-child(2) {
+  background-image: url(Fotky/Úvodní\ stránka.webp);
+}
+.carousel-container3 li:nth-child(3) {
+  background-image: url(Fotky/Detail\ místa.webp);
+}
+.carousel-container3 li:nth-child(4) {
+  background-image: url(Fotky/Interakční\ screen.webp);
 }
 @media (prefers-reduced-motion: no-preference) {
   .oddeleni {
@@ -598,4 +664,8 @@ footer {
     scale: 1;
     opacity: 1;
   }
+}
+.oddeleni ul {
+  margin-top: 0;
+  padding-top: 0;
 }
