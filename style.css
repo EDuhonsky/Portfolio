@@ -528,14 +528,16 @@ footer {
 }
 .carousel-container1,
 .carousel-container2,
-.carousel-container3 {
+.carousel-container3,
+.carousel-container4 {
   box-sizing: border-box;
   position: relative;
   width: 100%;
   border-radius: 23px 0 23px 0;
 }
 .carousel-container1 ul,
-.carousel-container2 ul {
+.carousel-container2 ul,
+.carousel-container4 ul {
   aspect-ratio: 3 / 2;
   padding: 20px;
   display: flex;
@@ -548,7 +550,8 @@ footer {
   gap: 1vw;
 }
 .carousel-container1 li,
-.carousel-container2 li {
+.carousel-container2 li,
+.carousel-container4 li {
   list-style-type: none;
   background-color: #eeeeee;
   border-radius: 0;
@@ -565,14 +568,16 @@ footer {
 }
 .carousel-container1 ul,
 .carousel-container2 ul,
-.carousel-container3 ul {
+.carousel-container3 ul,
+.carousel-container4 ul {
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
 }
 .carousel-container1 li,
-.carousel-container2 li {
+.carousel-container2 li,
+.carousel-container4 li {
   scroll-snap-align: center;
-  background-size: contain;
+  background-size: cover;
 }
 .carousel-container3 li {
   scroll-snap-align: center;
@@ -580,7 +585,8 @@ footer {
 }
 .carousel-container1,
 .carousel-container2,
-.carousel-container3 {
+.carousel-container3,
+.carousel-container4 {
   ::-webkit-scrollbar {
     background: #f7f3e3;
     height: 10px;
@@ -649,6 +655,18 @@ footer {
 }
 .carousel-container3 li:nth-child(4) {
   background-image: url(Fotky/Interakční\ screen.webp);
+}
+.carousel-container4 li:nth-child(1) {
+  background-image: url(Fotky/E1.webp);
+}
+.carousel-container4 li:nth-child(2) {
+  background-image: url(Fotky/E2.webp);
+}
+.carousel-container4 li:nth-child(3) {
+  background-image: url(Fotky/E3.webp);
+}
+.carousel-container4 li:nth-child(4) {
+  background-image: url(Fotky/E4.webp);
 }
 @media (prefers-reduced-motion: no-preference) {
   .oddeleni {
