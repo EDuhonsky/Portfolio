@@ -261,7 +261,7 @@
               <h2>Kontakt</h2>
               <div class="form">
                 <form
-                  action="https://eduhonsky.vercel.app/sendMail.php""
+                  action="send_email.php""
                   method="post"
                   enctype="text/plain"
                 >
@@ -300,11 +300,11 @@
 
                   <div class="row">
                     <label for="text"
-                      >Text<span class="hvezdicka">*</span></label
+                      >Zpráva<span class="hvezdicka">*</span></label
                     ><textarea
                       type="text"
                       id="text"
-                      placeholder="Napište text"
+                      placeholder="Napište zprávu"
                       required
                     ></textarea>
                   </div>
@@ -376,10 +376,6 @@
         }
         prevScrollpos = currentScrollPos;
       };
-
-      post = {
-        endPoint: 'https://eduhonsky.vercel.app/sendMail.php', 
-    }
     </script>
   </body>
   <!--co chci udělat: 
